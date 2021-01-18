@@ -152,6 +152,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-My-first-blog-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/18/My-first-blog-post/">My first blog post</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/18/My-first-blog-post/" class="archive-article-date">
+  	<time datetime="2021-01-18T04:18:11.491Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="My-hexo-blog的搭建过程2021-1-17"><a href="#My-hexo-blog的搭建过程2021-1-17" class="headerlink" title="My hexo blog的搭建过程2021/1/17"></a>My hexo blog的搭建过程2021/1/17</h1><h2 id="本人为Mac用户"><a href="#本人为Mac用户" class="headerlink" title="本人为Mac用户"></a>本人为Mac用户</h2><p>首先去官网下载node.js,本人下载的是v14.15.4,由于官网下载十分缓慢并且经常中断，因此此步骤为最慢的一步<br>安装包安装后有v14.15.4 Node.js与6.14.10 npm包管理器两个组件(可暂时保留安装包)<br>Terminal中输入sudo su切换到root用户(管理员.可以rm -rf /*的那个)<br>输入开机密码(显示sh-3.2#即为成功切换)<br>查看node版本：输入node -v;查看npm版本：输入npm -v<br>接下来安装hexo博客框架，正常直接用npm安装，但由于国内镜像源的速度很慢，一般再利用npm安装一个cnpm<br>操作：输入npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a>  (全局安装)<br>安装后输入cnpm回车出现内容证明安装完毕<br>输入cnpm -v后出现版本为成功</p>
+<p><a href="mailto:&#99;&#x6e;&#x70;&#109;&#x40;&#x36;&#x2e;&#x31;&#x2e;&#x31;">&#99;&#x6e;&#x70;&#109;&#x40;&#x36;&#x2e;&#x31;&#x2e;&#x31;</a> (/usr/local/lib/node_modules/cnpm/lib/parse_argv.js)<br><a href="mailto:&#x6e;&#112;&#109;&#64;&#x36;&#46;&#x31;&#x34;&#x2e;&#x31;&#x31;">&#x6e;&#112;&#109;&#64;&#x36;&#46;&#x31;&#x34;&#x2e;&#x31;&#x31;</a> (/usr/local/lib/node_modules/cnpm/node_modules/npm/lib/npm.js)<br><a href="mailto:&#110;&#111;&#x64;&#101;&#64;&#x31;&#52;&#46;&#x31;&#53;&#46;&#x34;">&#110;&#111;&#x64;&#101;&#64;&#x31;&#52;&#46;&#x31;&#53;&#46;&#x34;</a> (/usr/local/bin/node)<br><a href="mailto:&#x6e;&#x70;&#109;&#x69;&#110;&#x73;&#116;&#x61;&#108;&#108;&#64;&#x33;&#46;&#50;&#56;&#46;&#x30;">&#x6e;&#x70;&#109;&#x69;&#110;&#x73;&#116;&#x61;&#108;&#108;&#64;&#x33;&#46;&#50;&#56;&#46;&#x30;</a> (/usr/local/lib/node_modules/cnpm/node_modules/npminstall/lib/index.js)<br>prefix=/usr/local<br>darwin x64 19.6.0<br>registry=<a target="_blank" rel="noopener" href="https://r.npm.taobao.org/">https://r.npm.taobao.org</a></p>
+<p>继续用cnpm全局安装hexo-cli<br>输入cnpm install -g hexo-cli<br>安装完成后用hexo -v验证，会出现<br>hexo: 5.3.0<br>hexo-cli: 4.2.0<br>node: 14.15.4<br>等等，即为成功</p>
+<p>开始搭建博客，输入pwd看一下路径应该在/User/xxx下<br>建立一个空文件夹可将其命名为blog/，在过程中出现错误就干掉blog/，再从此步骤开始向下进行<br>输入cd进入blog/<br>输入sudo hexo init初始化一个blog,出现</p>
+<p>INFO Start blogging with Hexo!</p>
+<p>表示安装完成！<br>接下来就可以启动blog啦！<br>输入hexo s (即hexo server)即可启动//此命令为blog生成预览使用，只需要安装后输入一次hexo s即可，此后自动刷新<br>此时会提供一个内部地址一般为 localhost:4000<br>在浏览器输入即可查看到新建Hello World博客！<br>查看后输入^C断开操作<br>输入hexo n “my first blog post”创建一篇新文章，新生成路径source/_posts<br>cd进入该目录<br>输入vim my first blog post.md 进入修改内容<br>此时为markdown编辑器，hexo支持此编辑方式<br>进入后为 normal 模式，英文键入 i 进入 INSERT 模式，可以通过移动光标进行编辑<br>编辑完成后输入 esc 返回 normal 模式，输入 :wq 保存退出cd<br>此时blog文章已经建好！<br>输入cd ../.. 返回两层至blog/<br>清理hexo clean<br>生成hexo g<br>回到浏览器刷新即可看到新编辑的blog<br>随后要将blog部署到远端<br>若没有买来的服务器或域名<br>我们就把本地地址部署到远端GitHub上<br>^C断掉连接<br>blog/下编辑 _config.yml/<br>vim _config.yml<br>编辑方法与之前相同，直接找到最底部,按如下配置:(前提是有GitHub账户并创建了该地址仓库)</p>
+<p> Deployment<br> Docs: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a><br>deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/githubuser&#39;sname/githubuser&#39;sname.github.io.git">https://github.com/githubuser&#39;sname/githubuser&#39;sname.github.io.git</a><br>  branch: master</p>
+<p>配置好后保存退出，并将其配置到远端<br>命令为hexo d<br>一般来讲要用户分别来输入用户名和密码</p>
+<p>Username for ‘<a target="_blank" rel="noopener" href="https://github.com&/#39;">https://github.com&#39;</a>:<br>Password for ‘<a target="_blank" rel="noopener" href="https://User@github.com&/#39;">https://User@github.com&#39;</a>:</p>
+<p>如果说一上来没有看到这样的内容可能原因为没有配置git（大概）<br>需要进行的指令为：<br>git config –global user.name “…”<br>git config –global user.email “..@..”<br>一切完成后如果提示储存钥匙串，可以忽略<br>此时刷新GitHub仓库已经有内容生成<br>随后将仓库名输入到浏览器中访问就可以看到远端出现自己的blog了！<br>最后就可以开始我们的blog之旅啦！！</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>目前网站上也有许许多多的教程，大家一步步看都可以理解<br>搭建完blog框架后，包括修改theme，可视化编辑blog大家都可以继续摸索<br>PS.若有想要install的内容请使用cnpm不要用npm，也可以直接git clone<br>PPS.目前hexo-admin插件尝试没有成功，所以不妨尝试一下其他国内外的网站进行编辑</p>
+<h1 id="感谢借鉴～"><a href="#感谢借鉴～" class="headerlink" title="感谢借鉴～"></a>感谢借鉴～</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/18/My-first-blog-post/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-如何最简单最节约地使用Mac写C" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -192,65 +265,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/18/%E5%A6%82%E4%BD%95%E6%9C%80%E7%AE%80%E5%8D%95%E6%9C%80%E8%8A%82%E7%BA%A6%E5%9C%B0%E4%BD%BF%E7%94%A8Mac%E5%86%99C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-My-first-blog-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="title-My-first-blog-post"><a href="#title-My-first-blog-post" class="headerlink" title="title:My first blog post"></a>title:My first blog post</h2><h1 id="My-hexo-blog的搭建过程2021-1-17"><a href="#My-hexo-blog的搭建过程2021-1-17" class="headerlink" title="My hexo blog的搭建过程2021/1/17"></a>My hexo blog的搭建过程2021/1/17</h1><h2 id="本人为Mac用户"><a href="#本人为Mac用户" class="headerlink" title="本人为Mac用户"></a>本人为Mac用户</h2><p>首先去官网下载node.js,本人下载的是v14.15.4,由于官网下载十分缓慢并且经常中断，因此此步骤为最慢的一步<br>安装包安装后有v14.15.4 Node.js与6.14.10 npm包管理器两个组件(可暂时保留安装包)<br>Terminal中输入sudo su切换到root用户(管理员.可以rm -rf /*的那个)<br>输入开机密码(显示sh-3.2#即为成功切换)<br>查看node版本：输入node -v;查看npm版本：输入npm -v<br>接下来安装hexo博客框架，正常直接用npm安装，但由于国内镜像源的速度很慢，一般再利用npm安装一个cnpm<br>操作：输入npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a>  (全局安装)<br>安装后输入cnpm回车出现内容证明安装完毕<br>输入cnpm -v后出现版本为成功</p>
-<p><a href="mailto:&#x63;&#110;&#112;&#109;&#64;&#54;&#x2e;&#x31;&#x2e;&#49;">&#x63;&#110;&#112;&#109;&#64;&#54;&#x2e;&#x31;&#x2e;&#49;</a> (/usr/local/lib/node_modules/cnpm/lib/parse_argv.js)<br><a href="mailto:&#110;&#112;&#x6d;&#x40;&#54;&#46;&#x31;&#x34;&#46;&#x31;&#49;">&#110;&#112;&#x6d;&#x40;&#54;&#46;&#x31;&#x34;&#46;&#x31;&#49;</a> (/usr/local/lib/node_modules/cnpm/node_modules/npm/lib/npm.js)<br><a href="mailto:&#110;&#x6f;&#x64;&#101;&#x40;&#x31;&#52;&#46;&#49;&#x35;&#x2e;&#52;">&#110;&#x6f;&#x64;&#101;&#x40;&#x31;&#52;&#46;&#49;&#x35;&#x2e;&#52;</a> (/usr/local/bin/node)<br><a href="mailto:&#110;&#112;&#x6d;&#105;&#x6e;&#x73;&#x74;&#97;&#108;&#x6c;&#x40;&#51;&#46;&#50;&#56;&#x2e;&#48;">&#110;&#112;&#x6d;&#105;&#x6e;&#x73;&#x74;&#97;&#108;&#x6c;&#x40;&#51;&#46;&#50;&#56;&#x2e;&#48;</a> (/usr/local/lib/node_modules/cnpm/node_modules/npminstall/lib/index.js)<br>prefix=/usr/local<br>darwin x64 19.6.0<br>registry=<a target="_blank" rel="noopener" href="https://r.npm.taobao.org/">https://r.npm.taobao.org</a></p>
-<p>继续用cnpm全局安装hexo-cli<br>输入cnpm install -g hexo-cli<br>安装完成后用hexo -v验证，会出现<br>hexo: 5.3.0<br>hexo-cli: 4.2.0<br>node: 14.15.4<br>等等，即为成功</p>
-<p>开始搭建博客，输入pwd看一下路径应该在/User/xxx下<br>建立一个空文件夹可将其命名为blog/，在过程中出现错误就干掉blog/，再从此步骤开始向下进行<br>输入cd进入blog/<br>输入sudo hexo init初始化一个blog,出现</p>
-<p>INFO Start blogging with Hexo!</p>
-<p>表示安装完成！<br>接下来就可以启动blog啦！<br>输入hexo s (即hexo server)即可启动//此命令为blog生成预览使用，只需要安装后输入一次hexo s即可，此后自动刷新<br>此时会提供一个内部地址一般为 localhost:4000<br>在浏览器输入即可查看到新建Hello World博客！<br>查看后输入^C断开操作<br>输入hexo n “my first blog post”创建一篇新文章，新生成路径source/_posts<br>cd进入该目录<br>输入vim my first blog post.md 进入修改内容<br>此时为markdown编辑器，hexo支持此编辑方式<br>进入后为 normal 模式，英文键入 i 进入 INSERT 模式，可以通过移动光标进行编辑<br>编辑完成后输入 esc 返回 normal 模式，输入 :wq 保存退出cd<br>此时blog文章已经建好！<br>输入cd ../.. 返回两层至blog/<br>清理hexo clean<br>生成hexo g<br>回到浏览器刷新即可看到新编辑的blog<br>随后要将blog部署到远端<br>若没有买来的服务器或域名<br>我们就把本地地址部署到远端GitHub上<br>^C断掉连接<br>blog/下编辑 _config.yml/<br>vim _config.yml<br>编辑方法与之前相同，直接找到最底部,按如下配置:(前提是有GitHub账户并创建了该地址仓库)</p>
-<p> Deployment<br> Docs: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a><br>deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/githubuser&#39;sname/githubuser&#39;sname.github.io.git">https://github.com/githubuser&#39;sname/githubuser&#39;sname.github.io.git</a><br>  branch: master</p>
-<p>配置好后保存退出，并将其配置到远端<br>命令为hexo d<br>一般来讲要用户分别来输入用户名和密码</p>
-<p>Username for ‘<a target="_blank" rel="noopener" href="https://github.com&/#39;">https://github.com&#39;</a>:<br>Password for ‘<a target="_blank" rel="noopener" href="https://User@github.com&/#39;">https://User@github.com&#39;</a>:</p>
-<p>如果说一上来没有看到这样的内容可能原因为没有配置git（大概）<br>需要进行的指令为：<br>git config –global user.name “…”<br>git config –global user.email “..@..”<br>一切完成后如果提示储存钥匙串，可以忽略<br>此时刷新GitHub仓库已经有内容生成<br>随后将仓库名输入到浏览器中访问就可以看到远端出现自己的blog了！<br>最后就可以开始我们的blog之旅啦！！</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>目前网站上也有许许多多的教程，大家一步步看都可以理解<br>搭建完blog框架后，包括修改theme，可视化编辑blog大家都可以继续摸索<br>PS.若有想要install的内容请使用cnpm不要用npm，也可以直接git clone<br>PPS.目前hexo-admin插件尝试没有成功，所以不妨尝试一下其他国内外的网站进行编辑</p>
-<h1 id="感谢借鉴～"><a href="#感谢借鉴～" class="headerlink" title="感谢借鉴～"></a>感谢借鉴～</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/17/My-first-blog-post/">展开全文 >></a>
         </p>
       
 
